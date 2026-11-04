@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Stok | Ngebuku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">Nge<span>buku.</span></a>
+
+        <p class="menu-label">MENU UTAMA</p>
+
+        <nav class="menu-navigasi">
+            <a href="dashboard.html" class="menu-link"><span>▦</span> Dashboard</a>
+            <a href="stok.html" class="menu-link aktif"><span>▤</span> Informasi Stok</a>
+            <a href="checkout.html" class="menu-link"><span>🛒</span> Pemesanan</a>
+            <a href="tracking.html" class="menu-link"><span>⌖</span> Tracking Pengiriman</a>
+            <a href="dashboard.html#laporan" class="menu-link"><span>▧</span> Laporan Pemesanan</a>
+            <a href="dashboard.html#riwayat" class="menu-link"><span>◷</span> History Transaksi</a>
+        </nav>
+
+        <button class="menu-link tombol-logout" onclick="logout()">
+            <span>⇥</span> Keluar
+        </button>
+    </aside>
+
+    <main class="konten-utama">
+        <header class="header-halaman">
+            <div>
+                <p class="teks-kecil">MANAJEMEN KATALOG</p>
+                <h1>Informasi Stok Buku</h1>
+            </div>
+            <div class="profil-admin">
+                <div class="avatar-admin">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <span>Admin Ngebuku</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="sambutan-dashboard sambutan-biru">
+            <div>
+                <span class="label-atas">KATALOG NGEBUKU</span>
+                <h2>Kelola koleksi buku</h2>
+                <p>Lihat persediaan buku dan tambahkan koleksi baru ke katalog.</p>
+            </div>
+            <div class="hiasan-dashboard">B.</div>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Tambah Buku</h2>
+                    <p>Masukkan informasi buku yang ingin ditambahkan.</p>
+                </div>
+            </div>
+
+            <form id="formTambahBuku" class="form-kartu">
+                <div class="grid-form">
+                    <div class="form-group">
+                        <label for="judulBuku">Judul Buku</label>
+                        <input type="text" id="judulBuku" placeholder="Masukkan judul buku" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="penulisBuku">Penulis</label>
+                        <input type="text" id="penulisBuku" placeholder="Nama penulis" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kategoriBuku">Kategori</label>
+                        <input type="text" id="kategoriBuku" placeholder="Contoh: Pendidikan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hargaBuku">Harga (Rp)</label>
+                        <input type="number" id="hargaBuku" min="1" placeholder="Contoh: 85000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stokBuku">Jumlah Stok</label>
+                        <input type="number" id="stokBuku" min="0" placeholder="Contoh: 10" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="tombol-utama">+ Tambahkan Buku</button>
+            </form>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Daftar Katalog Buku</h2>
+                    <p>Informasi koleksi buku yang tersedia.</p>
+                </div>
+            </div>
+
+            <div class="tabel-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Judul Buku</th>
+                            <th>Penulis</th>
+                            <th>Kategori</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelStok">
+                        <tr>
+                            <td colspan="7" class="kosong">Memuat data buku...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer-halaman">
+            © 2026 Ngebuku — Sistem Informasi Pengelolaan Buku
+        </footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
