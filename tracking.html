@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman | Ngebuku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">Nge<span>buku.</span></a>
+
+        <p class="menu-label">MENU UTAMA</p>
+
+        <nav class="menu-navigasi">
+            <a href="dashboard.html" class="menu-link"><span>▦</span> Dashboard</a>
+            <a href="stok.html" class="menu-link"><span>▤</span> Informasi Stok</a>
+            <a href="checkout.html" class="menu-link"><span>🛒</span> Pemesanan</a>
+            <a href="tracking.html" class="menu-link aktif"><span>⌖</span> Tracking Pengiriman</a>
+            <a href="dashboard.html#laporan" class="menu-link"><span>▧</span> Laporan Pemesanan</a>
+            <a href="dashboard.html#riwayat" class="menu-link"><span>◷</span> History Transaksi</a>
+        </nav>
+
+        <button class="menu-link tombol-logout" onclick="logout()">
+            <span>⇥</span> Keluar
+        </button>
+    </aside>
+
+    <main class="konten-utama">
+        <header class="header-halaman">
+            <div>
+                <p class="teks-kecil">INFORMASI PENGIRIMAN</p>
+                <h1>Tracking Pengiriman</h1>
+            </div>
+            <div class="profil-admin">
+                <div class="avatar-admin">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <span>Admin Ngebuku</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="sambutan-dashboard sambutan-biru">
+            <div>
+                <span class="label-atas">LACAK PESANAN</span>
+                <h2>Periksa status pengiriman</h2>
+                <p>Masukkan nomor Delivery Order untuk melihat informasi pesanan.</p>
+            </div>
+            <div class="hiasan-dashboard">T.</div>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="tracking-pencarian">
+                <div>
+                    <h2>Cari Nomor Pesanan</h2>
+                    <p>Gunakan nomor DO yang didapatkan setelah checkout.</p>
+                </div>
+
+                <form id="formTracking" class="form-cari">
+                    <input
+                        type="text"
+                        id="nomorTracking"
+                        placeholder="Contoh: DO12345678"
+                        required
+                    >
+                    <button type="submit" class="tombol-utama">Lacak Pesanan</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="bagian-konten" id="hasilTracking">
+            <div class="pesan-kosong">
+                <div class="ikon-kosong">⌖</div>
+                <h3>Belum ada pencarian</h3>
+                <p>Masukkan nomor DO untuk menampilkan detail pengiriman.</p>
+            </div>
+        </section>
+
+        <footer class="footer-halaman">
+            © 2026 Ngebuku — Sistem Informasi Pengelolaan Buku
+        </footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
