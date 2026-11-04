@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Ngebuku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">Nge<span>buku.</span></a>
+
+        <p class="menu-label">MENU UTAMA</p>
+
+        <nav class="menu-navigasi">
+            <a href="dashboard.html" class="menu-link"><span>▦</span> Dashboard</a>
+            <a href="stok.html" class="menu-link"><span>▤</span> Informasi Stok</a>
+            <a href="checkout.html" class="menu-link aktif"><span>🛒</span> Pemesanan</a>
+            <a href="tracking.html" class="menu-link"><span>⌖</span> Tracking Pengiriman</a>
+            <a href="dashboard.html#laporan" class="menu-link"><span>▧</span> Laporan Pemesanan</a>
+            <a href="dashboard.html#riwayat" class="menu-link"><span>◷</span> History Transaksi</a>
+        </nav>
+
+        <button class="menu-link tombol-logout" onclick="logout()">
+            <span>⇥</span> Keluar
+        </button>
+    </aside>
+
+    <main class="konten-utama">
+        <header class="header-halaman">
+            <div>
+                <p class="teks-kecil">TRANSAKSI PENJUALAN</p>
+                <h1>Checkout Pemesanan</h1>
+            </div>
+            <div class="profil-admin">
+                <div class="avatar-admin">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <span>Admin Ngebuku</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="sambutan-dashboard sambutan-biru">
+            <div>
+                <span class="label-atas">PEMESANAN BUKU</span>
+                <h2>Buat pesanan baru</h2>
+                <p>Pilih buku, tentukan jumlah, dan lengkapi informasi pelanggan.</p>
+            </div>
+            <div class="hiasan-dashboard">C.</div>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Pilih Buku</h2>
+                    <p>Pilih buku dari katalog yang tersedia.</p>
+                </div>
+            </div>
+
+            <div class="form-kartu">
+                <div class="grid-form grid-pilih-buku">
+                    <div class="form-group">
+                        <label for="pilihBuku">Nama Buku</label>
+                        <select id="pilihBuku" required>
+                            <option value="">Memuat katalog buku...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jumlahBukuPesanan">Jumlah</label>
+                        <input type="number" id="jumlahBukuPesanan" min="1" value="1">
+                    </div>
+
+                    <div class="form-group tombol-tambah-wrapper">
+                        <label>&nbsp;</label>
+                        <button type="button" id="tambahPesanan" class="tombol-utama">
+                            + Tambah ke Pesanan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Daftar Pesanan</h2>
+                    <p>Periksa kembali buku dan jumlah yang akan dipesan.</p>
+                </div>
+            </div>
+
+            <div class="tabel-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Buku</th>
+                            <th>Harga</th>
+                            <th>Jumlah</th>
+                            <th>Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelKeranjang">
+                        <tr>
+                            <td colspan="5" class="kosong">Belum ada buku yang dipilih.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="total-belanja">
+                <span>Total Pembayaran</span>
+                <strong id="totalBelanja">Rp0</strong>
+            </div>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Informasi Pelanggan</h2>
+                    <p>Lengkapi data penerima dan metode pembayaran.</p>
+                </div>
+            </div>
+
+            <form id="formCheckout" class="form-kartu">
+                <div class="grid-form">
+                    <div class="form-group">
+                        <label for="namaPelanggan">Nama Lengkap</label>
+                        <input type="text" id="namaPelanggan" placeholder="Nama pelanggan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailPelanggan">Email</label>
+                        <input type="email" id="emailPelanggan" placeholder="nama@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teleponPelanggan">Nomor Telepon</label>
+                        <input type="tel" id="teleponPelanggan" placeholder="08xxxxxxxxxx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="metodePembayaran">Metode Pembayaran</label>
+                        <select id="metodePembayaran" required>
+                            <option value="">Pilih pembayaran</option>
+                            <option value="Transfer Bank">Transfer Bank</option>
+                            <option value="E-Wallet">E-Wallet</option>
+                            <option value="COD">COD</option>
+                            <option value="Tunai">Tunai</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="alamatPelanggan">Alamat Pengiriman</label>
+                        <textarea id="alamatPelanggan" rows="4" placeholder="Masukkan alamat lengkap" required></textarea>
+                    </div>
+                </div>
+
+                <div class="aksi-checkout">
+                    <a href="dashboard.html" class="tombol-sekunder">Kembali</a>
+                    <button type="submit" class="tombol-utama">Selesaikan Pesanan</button>
+                </div>
+            </form>
+        </section>
+
+        <footer class="footer-halaman">
+            © 2026 Ngebuku — Sistem Informasi Pengelolaan Buku
+        </footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
