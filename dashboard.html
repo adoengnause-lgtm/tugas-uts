@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Ngebuku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">Nge<span>buku.</span></a>
+
+        <p class="menu-label">MENU UTAMA</p>
+
+        <nav class="menu-navigasi">
+            <a href="dashboard.html" class="menu-link aktif">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="stok.html" class="menu-link">
+                <span>▤</span> Informasi Stok
+            </a>
+            <a href="checkout.html" class="menu-link">
+                <span>🛒</span> Pemesanan
+            </a>
+            <a href="tracking.html" class="menu-link">
+                <span>⌖</span> Tracking Pengiriman
+            </a>
+            <a href="#laporan" class="menu-link">
+                <span>▧</span> Laporan Pemesanan
+            </a>
+            <a href="#riwayat" class="menu-link">
+                <span>◷</span> History Transaksi
+            </a>
+        </nav>
+
+        <button class="menu-link tombol-logout" onclick="logout()">
+            <span>⇥</span> Keluar
+        </button>
+    </aside>
+
+    <main class="konten-utama">
+        <header class="header-halaman">
+            <div>
+                <p class="teks-kecil">HALO, ADMIN</p>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="profil-admin">
+                <div class="avatar-admin">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <span>Admin Ngebuku</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="sambutan-dashboard">
+            <div>
+                <span class="label-atas">PUSAT INFORMASI NGEBUKU</span>
+                <h2><span id="sapaan">Selamat datang</span>, Admin!</h2>
+                <p>Kelola katalog, pemesanan, dan transaksi buku melalui dashboard ini.</p>
+            </div>
+            <div class="hiasan-dashboard">N.</div>
+        </section>
+
+        <section class="bagian-konten">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Ringkasan Data</h2>
+                    <p>Informasi singkat aktivitas toko buku.</p>
+                </div>
+            </div>
+
+            <div class="grid-statistik">
+                <article class="kartu-statistik">
+                    <div class="ikon-statistik biru">▤</div>
+                    <p>Total Judul Buku</p>
+                    <h2 id="jumlahBuku">0</h2>
+                    <span>Judul dalam katalog</span>
+                </article>
+
+                <article class="kartu-statistik">
+                    <div class="ikon-statistik ungu">▥</div>
+                    <p>Total Stok Buku</p>
+                    <h2 id="jumlahStok">0</h2>
+                    <span>Unit buku tersedia</span>
+                </article>
+
+                <article class="kartu-statistik">
+                    <div class="ikon-statistik hijau">▣</div>
+                    <p>Total Pemesanan</p>
+                    <h2 id="jumlahPesanan">0</h2>
+                    <span>Transaksi tersimpan</span>
+                </article>
+
+                <article class="kartu-statistik">
+                    <div class="ikon-statistik jingga">Rp</div>
+                    <p>Total Pendapatan</p>
+                    <h2 id="totalPendapatan">Rp0</h2>
+                    <span>Akumulasi transaksi</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="bagian-konten" id="laporan">
+            <div class="judul-bagian">
+                <div>
+                    <h2>Laporan Pemesanan</h2>
+                    <p>Daftar pesanan yang masuk ke Ngebuku.</p>
+                </div>
+                <a href="checkout.html" class="tombol-kecil">Buat Pesanan</a>
+            </div>
+
+            <div class="tabel-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nomor DO</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Tanggal</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelLaporan">
+                        <tr>
+                            <td colspan="5" class="kosong">Memuat data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bagian-konten" id="riwayat">
+            <div class="judul-bagian">
+                <div>
+                    <h2>History Transaksi</h2>
+                    <p>Catatan transaksi yang pernah dilakukan.</p>
+                </div>
+            </div>
+
+            <div class="tabel-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nomor DO</th>
+                            <th>Pelanggan</th>
+                            <th>Pembayaran</th>
+                            <th>Total</th>
+                            <th>Tanggal Transaksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelRiwayat">
+                        <tr>
+                            <td colspan="5" class="kosong">Memuat data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer-halaman">
+            © 2026 Ngebuku — Sistem Informasi Pengelolaan Buku
+        </footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
