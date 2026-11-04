@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Ngebuku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="halaman-login">
+
+    <main class="login-container">
+        <section class="login-kiri">
+            <div class="logo-login">Nge<span>buku.</span></div>
+
+            <div class="login-sambutan">
+                <span class="label-atas">SELAMAT DATANG DI NGEBUKU</span>
+                <h1>Temukan buku,<br>perluas wawasan.</h1>
+                <p>
+                    Platform pengelolaan katalog dan pemesanan buku
+                    yang mudah digunakan.
+                </p>
+            </div>
+
+            <p class="login-footer">© 2026 Ngebuku. All rights reserved.</p>
+        </section>
+
+        <section class="login-kanan">
+            <div class="form-login">
+                <span class="label-atas">ADMIN PANEL</span>
+                <h2>Masuk ke akun</h2>
+                <p class="deskripsi">Silakan masukkan email dan password Anda.</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="admin@ngebuku.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Masukkan password"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-opsi">
+                        <button type="button" class="link-button" id="tombolLupa">
+                            Lupa Password?
+                        </button>
+                    </div>
+
+                    <button type="submit" class="tombol-utama tombol-login">
+                        Login
+                    </button>
+                </form>
+
+                <p class="teks-daftar">
+                    Belum memiliki akun?
+                    <button type="button" class="link-button" id="tombolDaftar">
+                        Daftar
+                    </button>
+                </p>
+
+                <div class="info-akun">
+                    <strong>Akun demo:</strong><br>
+                    Email: admin@ngebuku.com<br>
+                    Password: 12345
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL LUPA PASSWORD -->
+    <div class="modal" id="modalLupa">
+        <div class="modal-content">
+            <button type="button" class="tutup-modal">&times;</button>
+            <h2>Lupa Password?</h2>
+            <p>
+                Untuk keperluan demo UTS, silakan gunakan akun yang
+                telah disediakan pada halaman login.
+            </p>
+            <button type="button" class="tombol-utama tutup-modal">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL DAFTAR -->
+    <div class="modal" id="modalDaftar">
+        <div class="modal-content">
+            <button type="button" class="tutup-modal">&times;</button>
+            <h2>Informasi Pendaftaran</h2>
+            <p>
+                Fitur pendaftaran ditampilkan sebagai simulasi antarmuka.
+                Untuk masuk ke sistem demo, gunakan akun admin yang tersedia.
+            </p>
+            <button type="button" class="tombol-utama tutup-modal">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
